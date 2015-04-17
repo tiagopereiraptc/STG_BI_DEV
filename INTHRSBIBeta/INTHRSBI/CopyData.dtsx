@@ -11,11 +11,26 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="CopyData"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{B3EB92F2-36E9-475D-89BB-3E87CB74D81D}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{E424F28E-9F6B-4083-99DA-BF7698EAE587}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2902c5fe-9f8d-4b33-8061-2b6526fffdb0}"
+      DTS:ObjectName="192.168.130.10.INTHRS_STAGING 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.130.10;User ID=joao.anhas;Initial Catalog=INTHRS_STAGING;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlMd/WWdFjEWK7+mNxjpb8gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACCNOjsV/icWIKmwqIyXN72DZt5e+/rZCBZq1ZX2m4XlwAAAAAOgAAAAAIAACAAAAAspVdDU8bvrBeiOSUH9BaxpwM90RDD0SwEU8Ndki0tihAAAAA0tmWebBoqY1gt37gFoPvYQAAAAKgGnwZGgOtJQX+lWy9zHROWqdKp5GuRUNu9hag5bRXPN8ALS1EBus+L8VlTIolfknIGxipY9+w75+dFJGQCZ1c</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
       DTS:CreationName="OLEDB"
@@ -231,8 +246,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -251,6 +266,12 @@
                       cachedScale="7"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[arrival_data]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[arrival_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -346,8 +367,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1436,7 +1457,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="153,42"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="484,137" />
       </GraphLayout>
@@ -1448,31 +1469,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,42"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="590,50" />
-        <NodeLayout
           Size="173,45"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="572,384" />
+          TopLeft="611,562" />
         <NodeLayout
           Size="158,42"
           Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="584,204" />
+          TopLeft="555,238" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="590,50" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="664.5,92">
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="634,280">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,112"
+              EndConnector="63.5,282"
               Start="0,0"
-              End="0,104.5">
+              End="63.5,274.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,104.5" />
+                    End="0,137" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,137"
+                    Point2="0,141"
+                    Point3="4,141" />
+                  <mssgle:LineSegment
+                    End="59.5,141" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.5,141"
+                    Point2="63.5,141"
+                    Point3="63.5,145" />
+                  <mssgle:LineSegment
+                    End="63.5,274.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1482,19 +1515,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="660.75,246">
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="666,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,138"
+              EndConnector="-32,146"
               Start="0,0"
-              End="0,130.5">
+              End="-32,138.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,130.5" />
+                    End="0,69" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,69"
+                    Point2="0,73"
+                    Point3="-4,73" />
+                  <mssgle:LineSegment
+                    End="-28,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28,73"
+                    Point2="-32,73"
+                    Point3="-32,77" />
+                  <mssgle:LineSegment
+                    End="-32,138.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1507,14 +1552,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
@@ -1524,6 +1561,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
