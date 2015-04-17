@@ -11,19 +11,24 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="CopyData"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{CAD7ED02-AA76-4AEE-8BFC-8230D9B82255}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{F32A9F5E-2E5D-4C7F-9871-A5A9C0C81873}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
+      DTS:refId="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING.tiago]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{3F790B77-C1C6-46F3-B1A5-B6DD3B56E122}"
-      DTS:ObjectName="localhost.INTHRS_STAGING 1">
+      DTS:DTSID="{01694BF5-B244-405B-85EE-A46370F5E814}"
+      DTS:ObjectName="192.168.130.10.INTHRS_STAGING.tiago">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=INTHRS_STAGING;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=192.168.130.10;User ID=tiago;Initial Catalog=INTHRS_STAGING;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7MUZkaqgJEGip+lI6E3S7QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC4O0gtGU7j69f27fQ5Rv1URJljJcL6E2WmckD5iEHJAgAAAAAOgAAAAAIAACAAAACL84meJ4P5agtAwjVMXwLIWRuj5IXOGZvD4mCg6Kc4qSAAAADP0OlHG+ywCi5dU/g6geQocOfYJWS0B/0y6ByBanMgEUAAAAA6CAc2+rGCfQY5oEEbBuCZ0tqYOgomtxh7BpTnBpT8oqqbojS0KXYfD1ifwZ/Ku/ZhVOTlFE7rq9La1HF5H9JM</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -231,8 +236,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING.tiago]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING.tiago]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -352,8 +357,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.INTHRS_STAGING 1]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING.tiago]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.130.10.INTHRS_STAGING.tiago]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
